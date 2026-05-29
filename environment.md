@@ -87,6 +87,19 @@ Miniconda 是轻量版 Conda，用于管理虚拟环境和包依赖。
    ```bash
    conda create -n ai-agent-env python=3.11 -y
    ```
+   + 如果此步骤太慢，可以进行以下改进：
+   ```bash
+   # 1. 添加清华源的各个主频道
+ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+ # 2. 让 Conda 在下载时显示具体的包来自哪个源（方便排查）
+ conda config --set show_channel_urls
+ ```
+ + 用 libmamba 加速器
+ + ```bash
+ + conda config --set solver libmamba
+ + ```
 
 2. 激活环境：
 
